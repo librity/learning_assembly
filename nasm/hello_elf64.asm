@@ -1,11 +1,11 @@
 ; Compile, link and execute:
-; nasm -f elf64 hello_world.asm && ld hello_world.o && ./a.out
+; nasm -f elf64 hello_elf64.asm && ld hello_elf64.o && ./a.out
 
 ; Where we store runtime data (RAM data)
 section .data 
   message db "Hello World", 10
-; db = data bytes
-; 10 = endline, '\n'
+; db: data bytes
+; 10: endline, '\n'
 
 ; Where we store the intructions
 section .text

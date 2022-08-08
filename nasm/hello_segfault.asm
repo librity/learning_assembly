@@ -5,8 +5,8 @@
 ; Where we store runtime data (RAM data)
 section .data 
   message db "Hello World", 10
-; db = data bytes
-; 10 = endline, '\n'
+; db: data bytes
+; 10: endline, '\n'
 
 ; Where we store the intructions
 section .text
