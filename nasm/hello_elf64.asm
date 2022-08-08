@@ -12,7 +12,7 @@ section .text
 
 global _start
 _start:
-  ; Move 1 to rax register: tells the OS we're gonna write something.
+  ; Move 1 to rax 64-bit register: tells the OS we're gonna write something.
   mov rax, 1
   ; Move 1 to rdi register: tells the OS we're gonna write to the console.
   mov rdi, 1

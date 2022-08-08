@@ -9,7 +9,7 @@ global _start
 _start:
   ; Write "Hello World!\n" to STDOUT:
   ; ssize_t write(int fd, const void *buf, size_t count);
-  ; Use the write (4) syscall (unistd_32.h).
+  ; Move 4 to eax 32-bit register: Use the write syscall (unistd_32.h).
   mov eax, 0x4
   ; Use STDOUT as the file descriptor.
   mov ecx, 0x1
