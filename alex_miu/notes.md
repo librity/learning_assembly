@@ -1,6 +1,6 @@
 # [x86 NASM Assembly Crash Course](https://www.youtube.com/watch?v=DNPjBvZxE3E)
 
-## 3 `sections`s
+## Three `section`s
 
 ### `section .data`
 
@@ -55,33 +55,108 @@ Each bit means something.
 
 Can also use 32-bit registers.
 
-- `rax`: Sets the syscall instruction (see `unistd_64.h`).
+- `rax`: 64-bit `eax` (see `unistd_64.h`).
 
 ## Instructions
 
 ### Move
 
-- `mov dest, src`: Copy data from `src` to `dest`.
-- `movzx dest, src`: Zero-Extend, zero out `dest` and copy data from `src` to `dest`.
-  - `movzx eax, byte ptr [ebx]`: Zero out `eax`
-    and copy the first byte of the address pointed at by `ebx` to it.
-- `movsx dest, src`: Sign-Extend
-  - if `src` is negative then `dest` is filled with `1`s before the copy.
-  - if `src` is positive then `dest` is filled with `0`s before the copy.
+```nasm
+; Copy data from src to dest.
+mov dest, src
+
+; Zero-Extended Move, zero out dest and copy data from src to dest.
+movzx dest, src
+; Zero out eax and copy the first byte of the address pointed at by ebx to it.
+movzx eax, byte ptr [ebx]
+
+; Sign-Extended Move,
+; if src is negative then dest is filled with 1s before the copy.
+; if src is positive then dest is filled with 0s before the copy.
+movsx dest, src
+```
 
 ### Bitwise
 
-- `and ax, bx`: And `&` operate `bx` and `ax` bits and store result in `ax`.
-- `or ax, bx`: Or `|` operate `bx` and `ax` bits and store result in `ax`.
-- `xor ax, bx`: Exclusive Or `^` operate `bx` and `ax` bits and store result in `ax`.
-- `test ax, bx`: Check whether `src` and `dest` are equal and store result in the flag register.
+```nasm
+; And (&), operate bx and ax bits and store result in ax.
+and ax, bx
+
+; Or (|), operate bx and ax bits and store result in ax.
+or ax, bx
+
+; Exclusive Or (^), operate bx and ax bits and store result in ax.
+xor ax, bx
+
+; Check whether src and dest are equal and store result in the flag register.
+test ax, bx
+```
 
 ### Arithmetic
 
-- `add ax, bx`: Add `ax` with `bx` and store result in `ax`.
-- `sub ax, bx`: Subtract `ax` with `bx` and store result in `ax`.
-- `mul bx`: Multiply `ax` and `bx` and store in `dx:ax`.
-- `div bx`: Divide `dx:ax` by `bx` and store in `ax` and `Rdx` (the remainder).
+```nasm
+; Add ax with bx and store result in ax.
+add ax, bx
+
+; Subtract ax with bx and store result in ax.
+sub ax, bx
+
+; Multiply ax and bx and store in dx:ax.
+mul bx
+
+; Divide dx:ax by bx and store in ax and Rdx (the remainder).
+div bx
+```
+
+### Jump
+
+```nasm
+; Jump to label1.
+jmp label1
+
+; If Zero Flag equals 1 jump to label1.
+je label1
+; If Zero Flag equals 0 jump to label1.
+jne label1
+
+; Jump Zero.
+jz label1
+
+; Jump Carry.
+jc label1
+
+; Jump Overflow.
+jo label1
+
+; Jump Sign Flag.
+js label1
+
+; Jump Greater.
+jg label1
+; Jump Greater Than Or Equal To.
+jge label1
+
+; Jump Less.
+jl label1
+; Jump Less Than Or Equal To.
+jle label1
+
+; Jump Above.
+ja label1
+; Jump Above Equal.
+jae label1
+
+; Jump Below.
+jb label1
+; Jump Below Equal.
+jbe label1
+```
+
+### Call
+
+```nasm
+call label1
+```
 
 ## Resources
 
@@ -90,6 +165,10 @@ Can also use 32-bit registers.
 - https://courses.ics.hawaii.edu/ReviewICS312/morea/DataSizeAndArithmetic/ics312_datasize.pdf
 - https://www.felixcloutier.com/x86/movsx:movsxd
 - https://stackoverflow.com/questions/47350568/yasm-movsx-movsxd-invalid-size-for-operand-2
+
+### Parity
+
+- https://en.wikipedia.org/wiki/Parity_bit
 
 ### Markdown
 
