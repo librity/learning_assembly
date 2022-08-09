@@ -22,6 +22,7 @@ _start:
   mov rdx, 12
   ; After confuguring instuctions, call the OS to perform them.
   syscall
+
   ; Move 60 to rax register: tells the OS to exit the program.
   mov rax, 60
   ; Move 0 to rdi register: tells the OS we're no longer gonna use the console.

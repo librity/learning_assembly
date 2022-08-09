@@ -12,7 +12,7 @@ _start:
   ; Move 4 to eax 32-bit register: Use the write syscall (unistd_32.h).
   mov eax, 0x4
   ; Use STDOUT as the file descriptor.
-  mov ecx, 0x1
+  mov ebx, 0x1
   ; Use the message as the buffer.
   mov ecx, message
   ; Set the amount of bytes to write.

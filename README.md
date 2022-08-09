@@ -38,6 +38,8 @@ _start:
 $ gcc -S hello.c
 ```
 
+- https://www.geeksforgeeks.org/convert-cc-code-to-assembly-language/
+
 ### Videos
 
 - https://www.youtube.com/watch?v=iYRl50gtprA

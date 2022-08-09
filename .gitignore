@@ -3,3 +3,6 @@
 
 # Binaries
 *.out
+
+# Listings
+*.lst
