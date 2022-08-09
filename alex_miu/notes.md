@@ -286,6 +286,12 @@ $ nasm -f elf64 -l printf.lst printf.asm
 
 ## Resources
 
+### University of Maryland, Baltimore County
+
+- https://www2.umbc.edu/ieee/resources.html
+- https://asmtutor.com/
+- https://cs.lmu.edu/~ray/notes/nasmtutorial/
+
 ### Linking 32-bit Objects
 
 - https://stackoverflow.com/a/31773356

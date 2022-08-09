@@ -15,7 +15,7 @@ section .data
   msg_length equ $-msg
 
 
-; Reserve space in memory for future data.
+; Block Starting Symbol: reserve space in memory for future data.
 section .bss
 
 
