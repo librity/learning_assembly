@@ -1,4 +1,4 @@
-# learning_assembly
+# Learning Assembly
 
 - https://en.wikipedia.org/wiki/Assembly_language
 

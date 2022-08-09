@@ -4,12 +4,11 @@
 
 ### `section .data`
 
-Define constant variables:
-strings, magic numbers (codes), terminating strings, etc.
+Define constants: strings, magic numbers (codes), terminating strings, etc.
 
 ### `section .bss`
 
-Reserve space in memory for future data.
+Block Starting Symbol: reserve space in memory for future data.
 
 ### `section .text`
 
